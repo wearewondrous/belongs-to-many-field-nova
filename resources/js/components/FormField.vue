@@ -55,6 +55,8 @@ export default {
   },
   data() {
     return {
+      // React on yassi/nova-nested-form new property
+      attribute: this.field.originalAttribute || this.field.attribute,
       options: [],
       optionsLabel: "name",
       trackBy: "id",
@@ -196,7 +198,7 @@ export default {
               this.resourceName +
               "/" +
               "options/" +
-              this.field.attribute +
+              this.attribute +
               "/" +
               this.optionsLabel +
               "/" +
@@ -217,7 +219,7 @@ export default {
             this.resourceName +
             "/" +
             "options/" +
-            this.field.attribute +
+            this.attribute +
             "/" +
             this.optionsLabel
         ).then((data) => {
